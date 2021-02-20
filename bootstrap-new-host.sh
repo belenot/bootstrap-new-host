@@ -20,6 +20,9 @@ echo === Install Java 11 JDK.
 echo === Install Kotlin 1.4.21.
 #sdk install kotlin 1.4.21
 
+echo === Install Groovy.
+#sdk install groovy
+
 echo === Install Intelliji Idea Community Edition from snap.
 #sudo snap install intellij-idea-community --classic --edge
 
@@ -96,3 +99,19 @@ echo === Copy configs for aws and ssh from infrastructure aw role via password a
 #ansible-vault decrypt ~/projects/infrastructure/roles/aw/files/belenot.pem --output ~/.ssh/aws/belenot.pem --vault-password-file ~/password
 #ansible-vault decrypt ~/projects/infrastructure/roles/aw/files/.aws/config --output ~/.aws/config --vault-password-file ~/password
 #ansible-vault decrypt ~/projects/infrastructure/roles/aw/files/.aws/credentials --output ~/.aws/credentials --vault-password-file ~/password
+
+echo === Install gnome-tweaks.
+#sudo apt-get install gnome-tweaks -y
+#sudo apt install gnome-shell-extensions -y
+#sudo apt install dconf-editor -y
+
+echo === Configure ansible.cfg for yaml output
+if [ ! -d /etc/ansible ]; then sudo mkdir /etc/ansible; fi
+echo '[defaults]
+# Use the YAML callback plugin.
+stdout_callback = yaml
+# Use the stdout_callback when running ad-hoc commands.
+bin_ansible_callbacks = True' | sudo tee -a /etc/ansible/ansible.cfg
+
+# Add letsencrypt cert to java keytool truststore
+# keytool -importcert -alias letsencrypt  -keystore /home/belenot/.sdkman/candidates/java/current/lib/security/cacerts -file ./letsencrypt.pem
