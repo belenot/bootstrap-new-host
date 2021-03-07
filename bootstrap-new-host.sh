@@ -115,3 +115,5 @@ bin_ansible_callbacks = True' | sudo tee -a /etc/ansible/ansible.cfg
 
 # Add letsencrypt cert to java keytool truststore
 # keytool -importcert -alias letsencrypt  -keystore /home/belenot/.sdkman/candidates/java/current/lib/security/cacerts -file ./letsencrypt.pem
+
+# Install teamviewer
