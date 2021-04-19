@@ -24,3 +24,7 @@ echo 'Install Grafana.'
 sudo apt-get install -y adduser libfontconfig1
 curl -sL $GRAFANA_PACKAGE_URL > grafana.deb
 sudo dpkg -i grafana.deb
+
+echo 'Install Grafana Node_Exporter dashboard.'
+sudo cp grafana/node-exporter-dashboard.json  /etc/grafana/provisioning/dashboards/
+sudo cp grafana/prometheus-datasource.json /etc/grafana/provisioning/datasources
