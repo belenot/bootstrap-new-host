@@ -117,3 +117,5 @@ bin_ansible_callbacks = True' | sudo tee -a /etc/ansible/ansible.cfg
 # keytool -importcert -alias letsencrypt  -keystore /home/belenot/.sdkman/candidates/java/current/lib/security/cacerts -file ./letsencrypt.pem
 
 # Install teamviewer
+# Install pgadmin
+sh install-pgadmin.sh
