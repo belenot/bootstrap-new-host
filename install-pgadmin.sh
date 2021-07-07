@@ -13,7 +13,7 @@ sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal 
 #
 
 # Install for both desktop and web modes:
-#sudo apt install pgadmin4
+sudo apt install pgadmin4
 
 # Install for desktop mode only:
 sudo apt install pgadmin4-desktop -y
